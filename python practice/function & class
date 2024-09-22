@@ -1,0 +1,89 @@
+
+print(great("alice"))
+
+def greet2(name, message="good morning"):
+    return f"{message} {name}"
+
+print(greet2("joh"))
+#%%
+print(greet2("hoh", "hihi"))
+#%%
+def get_min_max(numbers):
+    return min(numbers), max(numbers)
+#%%
+get_min_max([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+#%%
+def add(a,b) :
+    return a+b
+#%%
+add(2,3)
+#%%
+def describe_pet(animal_type, pet_name) :
+    print(f"I have a {animal_type} named {pet_name}")
+#%%
+describe_pet("dog","wind")
+#%%
+def describe_pet2(animal_type, pet_name) :
+    print(f"I have a (animal_type) named (pet_name)")
+#%%
+describe_pet2("dog","wind")
+#%%
+def make_pizza(*topings):
+    print("Making a pizza with the following toppongs:")
+    for topping in topings:
+        print(f"\t{topping}")
+#%%
+"""
+topings의 의미
+함수에 *topings를 사용하면 함수는 여러 개의 인수를 받을 수 있습니다. 여기서 topings는 튜플 형태로 여러 개의 인수를 묶습니다.
+예를 들어, make_pizza("pepperoni", "cheese", "mushrooms")를 호출하면 topings는 ("pepperoni", "cheese", "mushrooms")라는 튜플이 됩니다.
+2. for topping in topings:의 동작 방식
+이제 for 루프를 통해 이 topings 튜플을 하나씩 순회하는 과정을 설명하겠습니다.
+
+for 루프는 topings라는 튜플을 첫 번째 원소부터 마지막 원소까지 차례대로 하나씩 꺼내옵니다.
+그 과정에서 **각각의 원소(토핑)**가 변수 topping에 할당됩니다.
+예를 들어 topings가 ("pepperoni", "cheese", "mushrooms")이면, 첫 번째 루프에서는 topping에 "pepperoni"가 저장되고, 두 번째 루프에서는 "cheese", 세 번째 루프에서는 "mushrooms"가 저장됩니다.
+"""
+#%%
+make_pizza("a","b","c")
+#%%
+def build_profile(first, last, **user_info) :
+    user_info['first_name'] = first
+    user_info['last_name'] = last
+    return user_info
+#%%
+"""
+딕셔너리에 항목 추가:
+user_info['first_name'] = first: 딕셔너리 user_info에 'first_name'이라는 키로 first 값을 추가합니다.
+user_info['last_name'] = last: 딕셔너리 user_info에 'last_name'이라는 키로 last 값을 추가합니다.
+
+차이 요약:
+*는 여러 개의 위치 인수를 받아 튜플로 변환합니다.
+**는 여러 개의 키워드 인수를 받아 딕셔너리로 변환합니다.
+"""
+#%%
+user_profile = build_profile('alvert', 'einstein', location='print', field='pysics')
+#%%
+[print(user_profile)]
+#%%
+def modify(lst) :
+    lst.append(4)
+    print("lst inside function:", lst)
+    
+lst =[1,2,3,5]
+modify(lst)
+print("lst outside function:", lst)
+#%%
+#append는 소괄호 사용
+#%%
+def modify(x):
+    x = 10
+    print('x inside function', x)
+
+#%%
+x = 5
+modify(x)
+print('x outside function', x)
+#%%
+def function1():
+    pass
